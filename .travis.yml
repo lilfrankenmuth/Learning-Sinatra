@@ -1,2 +1,12 @@
 language: ruby
+rvm:
+- 1.9.3
+- 2.5.3
+- 2.1.9
+- 2.2.9
 script: bundle exec ruby server.rb
+
+jobs:
+  include:
+  - name: deployment
+    script: bundle exec ruby server.rb rake deploy
